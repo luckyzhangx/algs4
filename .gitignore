@@ -1,0 +1,9 @@
+*.jar
+*.txt
+*.zip
+.idea
+algs4-data
+out
+.swap
+*.log
+*.iml

@@ -9,6 +9,6 @@ import java.util.Comparator;
 
 public class Test {
     public static void main(String[] args) {
-
+        System.out.println("Hello! Can I work properly now\n");
     }
 }

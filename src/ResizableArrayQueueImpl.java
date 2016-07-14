@@ -11,14 +11,14 @@ import java.util.Scanner;
  * resize part of queue is interesting than of stack and bag.
  */
 
-public class ResizeArrayQueueImpl<Item> implements Iterable<Item> {
+public class ResizableArrayQueueImpl<Item> implements Iterable<Item> {
 
     private Item queue[];
     private int size;
     private int first;//refer to the first out item;
     private int last;//refer to the slot next item will stuff in;
 
-    public ResizeArrayQueueImpl() {
+    public ResizableArrayQueueImpl() {
         queue = (Item[]) new Object[2];
         size = 0;
         first = 0;
@@ -86,7 +86,7 @@ public class ResizeArrayQueueImpl<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        ResizeArrayQueueImpl<String> q = new ResizeArrayQueueImpl<>();
+        ResizableArrayQueueImpl<String> q = new ResizableArrayQueueImpl<>();
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
             String item = s.next();

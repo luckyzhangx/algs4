@@ -62,7 +62,27 @@ public class ResizeArrayQueueImpl<Item> implements Iterable<Item> {
 
     @Override
     public Iterator<Item> iterator() {
-        return null;
+        class QueueIterator implements Iterator<Item>{
+            int i = 0;
+            @Override
+            public boolean hasNext() {
+                return i < size;
+            }
+
+            @Override
+            public Item next() {
+                if(!hasNext()) throw new NoSuchElementException();
+                Item item = queue[(first + i)%queue.length];
+                i++;
+                return item;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+        }
+        return new QueueIterator();
     }
 
     public static void main(String[] args) {
@@ -70,8 +90,13 @@ public class ResizeArrayQueueImpl<Item> implements Iterable<Item> {
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
             String item = s.next();
+            if (item.equals("exit")) break;
             if (!item.equals("-")) q.enqueue(item);
             else if(!q.isEmpty()) System.out.println(q.dequeue());
+        }
+        System.out.println("print left queue:");
+        for (String str : q){
+            System.out.println(str);
         }
     }
 }

@@ -6,11 +6,11 @@ import java.util.Scanner;
 /**
  * Created by luckyzhang on 2016/7/15.
  */
-public class QuickFindUnionUFImpl {
+public class QuickFindUFImpl {
     private int id[];
     private int count;
 
-    QuickFindUnionUFImpl(int size){
+    QuickFindUFImpl(int size){
         id = new int[size];
         count = size;
         for (int i=0; i < size; i++){
@@ -29,6 +29,7 @@ public class QuickFindUnionUFImpl {
 
         for (int i = 0; i < id.length; i++)
             if (id[i] == pID) id[i] = qID;
+        count--;
     }
 
     public boolean isConnected(int p, int q){
@@ -45,7 +46,7 @@ public class QuickFindUnionUFImpl {
         Scanner s = new Scanner(path);
         int size = s.nextInt();
         System.out.println("size:" + size);
-        QuickFindUnionUFImpl union = new QuickFindUnionUFImpl(size);
+        QuickFindUFImpl union = new QuickFindUFImpl(size);
         while(s.hasNext()){
             int p = s.nextInt();
             int q = s.nextInt();
@@ -53,6 +54,6 @@ public class QuickFindUnionUFImpl {
             union.Union(p,q);
             System.out.println(p + " " + q);
         }
-        System.out.println(union.count + "components");
+        System.out.println(union.count() + "components");
     }
 }

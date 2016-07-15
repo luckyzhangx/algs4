@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -8,12 +6,12 @@ import java.util.Scanner;
 /**
  * Created by luckyzhang on 2016/7/15.
  */
-public class WeightedQuickUnionUFImpl {
+public class WeightedQuickUnionUFwithPathCompressionImpl {
     private int id[];
     private int size[];
     private int count;//number of components.
 
-    WeightedQuickUnionUFImpl(int size) {
+    WeightedQuickUnionUFwithPathCompressionImpl(int size) {
         id = new int[size];
         this.size = new int[size];
         count = size;
@@ -28,8 +26,13 @@ public class WeightedQuickUnionUFImpl {
     }
 
     public int find(int p) {
-        while (p != id[p]) p = id[p];
-        return p;
+//        find root and flatten nodes along the way to the root.
+        if (p == id[p]) return p;
+        int root = find(id[p]);
+        id[p] = root;
+        return root;
+//        while (p != id[p]) p = id[p];
+//        return p;
     }
 
     public boolean isConnected(int p, int q) {
@@ -56,7 +59,7 @@ public class WeightedQuickUnionUFImpl {
         Scanner s = new Scanner(path);
         int size = s.nextInt();
         System.out.println("size:" + size);
-        WeightedQuickUnionUFImpl union = new WeightedQuickUnionUFImpl(size);
+        WeightedQuickUnionUFwithPathCompressionImpl union = new WeightedQuickUnionUFwithPathCompressionImpl(size);
         while (s.hasNext()) {
             int p = s.nextInt();
             int q = s.nextInt();

@@ -7,8 +7,8 @@ import java.util.Scanner;
 /**
  * Created by luckyzhang on 2016/7/16.
  */
-public class SelectionImpl {
-    public static void sort (Comparable[] a) {
+public class SelectionImpl extends Sort {
+    public  void sort (Comparable[] a) {
         int size = a.length;
         for (int i=0; i<size; i++) {
             int min = i;
@@ -18,26 +18,14 @@ public class SelectionImpl {
         }
     }
 
-    private static boolean less(Comparable a, Comparable b){
-        return a.compareTo(b) < 0;
-    }
 
-    private static void exchange(Comparable[] a, int i, int j){
-        Comparable temp = a[i]; a[i] = a[j]; a[j] = temp;
-    }
-
-    public static boolean isSorted(Comparable[] a){
-        for (int i = 0; i<a.length-1; i++)
-            if (a[i].compareTo(a[i+1]) > 0) return false;
-        return true;
-    }
 
     public static void main(String[] args) throws IOException {
         Reader reader = new FileReader(args[0]);
         Scanner scanner = new Scanner(reader);
         String content = scanner.useDelimiter("\\Z").next();
         String[] a = content.split("\\s");
-        SelectionImpl.sort(a);
+        new SelectionImpl().sort(a);
         System.out.println(a + " is sorted?" + SelectionImpl.isSorted(a));
         for (String str: a) System.out.println(str);
     }

@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -7,11 +6,11 @@ import java.util.Scanner;
 /**
  * Created by luckyzhang on 2016/7/15.
  */
-public class QuickUnionImpl {
+public class QuickFindUnionUFImpl {
     private int id[];
     private int count;
 
-    QuickUnionImpl(int size){
+    QuickFindUnionUFImpl(int size){
         id = new int[size];
         count = size;
         for (int i=0; i < size; i++){
@@ -46,7 +45,7 @@ public class QuickUnionImpl {
         Scanner s = new Scanner(path);
         int size = s.nextInt();
         System.out.println("size:" + size);
-        QuickUnionImpl union = new QuickUnionImpl(size);
+        QuickFindUnionUFImpl union = new QuickFindUnionUFImpl(size);
         while(s.hasNext()){
             int p = s.nextInt();
             int q = s.nextInt();

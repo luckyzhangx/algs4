@@ -17,7 +17,7 @@ public class ShellImpl extends Sort {
             for (int i = 0; i < size; i++) {
                 Comparable temp = a[i];
                 int j = i-H;
-                for (; j>0 && less(temp, a[j]); j -= H)
+                for (; j>=0 && less(temp, a[j]); j -= H)
                     a[j+H] = a[j];
                 a[j+H] = temp;
             }

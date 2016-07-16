@@ -8,7 +8,7 @@ public class SortCompare {
         Stopwatch timer = new Stopwatch();
         if (alg.equals("Insertion"))    new InsertionImpl().sort(a);
         if (alg.equals("Selection"))    new SelectionImpl().sort(a);
-        if (alg.equals("Shell"))        Shell.sort(a);
+        if (alg.equals("Shell"))        new ShellImpl().sort(a);
         if (alg.equals("Merge"))        Merge.sort(a);
         if (alg.equals("Quick"))        Quick.sort(a);
         if (alg.equals("Heap"))         Heap.sort(a);

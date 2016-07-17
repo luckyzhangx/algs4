@@ -6,8 +6,11 @@ import java.util.Scanner;
 /**
  * Created by luckyzhang on 2016/7/17.
  */
+<<<<<<< HEAD
 
 //heap sort for Comparable array starting at index 0.
+=======
+>>>>>>> b1ce083e7ea9f4799a6f75d68e37108ce3eb5c16
 public class HeapSortImpl extends Sort {
     public void sort(Comparable a[]) {
 //        construct heap

@@ -63,9 +63,56 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return Math.max(left, right) + 1;
     }
 
+    /*                                                         init position    gap gap2next
+    *               - - - - - - - + - - - - - - -       8                               4
+    *               - - - + - - - - - - - + - - -       4                       7      2
+    *               - + - - - + - - - + - - - + -       2                       3      1
+    *               + - + - + - + - + - + - + - +       1                       1
+    *               1 2   4        8
+    * */
+
+    private class PrintNode{
+        Node node;
+        int position;
+        int gap;
+
+        PrintNode(Node node, int position, int gap){
+            this.node = node;
+            this.position=position;
+            this.gap=gap;
+        }
+    }
+    public void print() {
+        int n = layer();
+        int position = (int)Math.pow(2, n-1);
+        int offset = 0;
+        int gap = position/2;//gap to next layer.
+        LinkedListQueueImpl<PrintNode> queue = new LinkedListQueueImpl<>();
+        PrintNode printNode = new PrintNode(root, position, gap);
+        queue.enqueue(printNode);
+        while (!queue.isEmpty()) {
+            PrintNode p = queue.dequeue();
+            boolean isSameLine = (p.gap == gap);
+            if (isSameLine) {
+                int space = p.position-offset-1;
+                System.out.printf("%" + (space+1) + "s", p.node.key);
+                offset = p.position;
+            } else {
+                gap = gap/2;
+                System.out.printf("\n");
+                int space = p.position-1;
+                System.out.printf("%" + (space+1) + "s", p.node.key);
+                offset = p.position;
+            }
+            if (p.node.left !=null ) queue.enqueue(new PrintNode(p.node.left, p.position-p.gap, p.gap/2));
+            if (p.node.right !=null ) queue.enqueue(new PrintNode(p.node.right, p.position+p.gap, p.gap/2));
+        }
+    }
+
     public static void main(String[] args) {
         BSTImpl bst = new BSTImpl();
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
         int i=0;
         while (scanner.hasNext()) {
             String token = scanner.next();
@@ -76,5 +123,6 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
             bst.put(token, i++);
         }
         System.out.println("layers: " + bst.layer());
+        bst.print();
     }
 }

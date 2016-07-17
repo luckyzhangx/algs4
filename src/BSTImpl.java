@@ -52,14 +52,29 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    public int layer(){
+        return layer(root);
+    }
+
+    private int layer(Node node) {
+        if (node == null) return 0;
+        int left = layer(node.left);
+        int right = layer(node.right);
+        return Math.max(left, right) + 1;
+    }
+
     public static void main(String[] args) {
         BSTImpl bst = new BSTImpl();
         Scanner scanner = new Scanner(System.in);
         int i=0;
         while (scanner.hasNext()) {
             String token = scanner.next();
-            if (token == "exit") break;
+            System.out.println(token);
+            if (token.equals("exit")){
+                System.out.println("break");
+                break;}
             bst.put(token, i++);
         }
+        System.out.println("layers: " + bst.layer());
     }
 }

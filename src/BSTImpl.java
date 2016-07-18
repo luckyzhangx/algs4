@@ -52,6 +52,24 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    public Key min() {
+        return min(root).key;
+    }
+
+    private Node min(Node node) {
+        if (node.left != null) return min(node.left);
+        return node;
+    }
+
+    public Key max() {
+        return max(root).key;
+    }
+
+    private Node max(Node node) {
+        if (node.right != null) return max(node.right);
+        return node;
+    }
+
     public int layer(){
         return layer(root);
     }
@@ -137,5 +155,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
 //        System.out.println("layers: " + bst.layer());
 //        bst.print();
         bst.printInOrder();
+        System.out.println("min: " + bst.min());
+        System.out.println("max: " + bst.max());
     }
 }

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99edb9aa-3cc0-40c2-8620-b0989c1d086c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BSTImpl.java" afterPath="$PROJECT_DIR$/src/BSTImpl.java" />
     </list>
     <ignored path="algs4.iws" />
@@ -32,34 +33,30 @@
       <file leaf-file-name="BSTImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BSTImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="220" column="34" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+            <state relative-caret-position="58">
+              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
               <folding>
                 <element signature="docComment;class#BSTImpl#0" expanded="false" />
-                <element signature="class#Node#0;class#BSTImpl#0" expanded="false" />
                 <element signature="method#Node#0;class#Node#0;class#BSTImpl#0" expanded="false" />
+                <element signature="method#size#1;class#BSTImpl#0" expanded="false" />
                 <element signature="method#get#1;class#BSTImpl#0" expanded="false" />
                 <element signature="method#put#1;class#BSTImpl#0" expanded="false" />
-                <element signature="e#1456#1457#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
-                <element signature="e#1821#1822#0" expanded="true" />
-                <element signature="e#1859#1860#0" expanded="true" />
-                <element signature="e#2175#2176#0" expanded="true" />
-                <element signature="e#2211#2212#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2387#2388#0" expanded="true" />
-                <element signature="e#2538#2539#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2931#2932#0" expanded="true" />
-                <element signature="e#2976#2977#0" expanded="true" />
-                <element signature="e#3323#3324#0" expanded="true" />
+                <element signature="e#1452#1453#0" expanded="true" />
+                <element signature="e#1487#1488#0" expanded="true" />
+                <element signature="method#select#1;class#BSTImpl#0" expanded="false" />
+                <element signature="method#rank#1;class#BSTImpl#0" expanded="false" />
+                <element signature="method#min#1;class#BSTImpl#0" expanded="false" />
+                <element signature="method#max#1;class#BSTImpl#0" expanded="false" />
+                <element signature="method#floor#1;class#BSTImpl#0" expanded="false" />
+                <element signature="method#ceiling#1;class#BSTImpl#0" expanded="false" />
                 <element signature="method#layer#1;class#BSTImpl#0" expanded="false" />
                 <element signature="class#PrintNode#0;class#BSTImpl#0" expanded="false" />
                 <element signature="method#PrintNode#0;class#PrintNode#0;class#BSTImpl#0" expanded="false" />
-                <element signature="method#printInOrder#1;class#BSTImpl#0" expanded="false" />
+                <element signature="e#4608#4609#0" expanded="true" />
+                <element signature="e#4642#4643#0" expanded="true" />
                 <element signature="method#print#0;class#BSTImpl#0" expanded="false" />
-                <element signature="e#5813#5864#0" expanded="false" />
-                <element signature="e#6304#6359#0" expanded="false" />
+                <element signature="e#6093#6144#0" expanded="false" />
+                <element signature="e#6536#6591#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,10 +115,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="1378" />
-    <option name="height" value="754" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -645,7 +641,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
+    <frame x="-7" y="0" width="1378" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -654,9 +650,9 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61120266" sideWeight="0.51215804" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25041187" sideWeight="0.49392098" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24916388" sideWeight="0.49392098" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.4969605" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261944" sideWeight="0.49544072" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.49544072" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28887194" sideWeight="0.48998666" order="0" side_tool="false" content_ui="combo" />
@@ -1089,34 +1085,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="220" column="34" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+        <state relative-caret-position="58">
+          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
           <folding>
             <element signature="docComment;class#BSTImpl#0" expanded="false" />
-            <element signature="class#Node#0;class#BSTImpl#0" expanded="false" />
             <element signature="method#Node#0;class#Node#0;class#BSTImpl#0" expanded="false" />
+            <element signature="method#size#1;class#BSTImpl#0" expanded="false" />
             <element signature="method#get#1;class#BSTImpl#0" expanded="false" />
             <element signature="method#put#1;class#BSTImpl#0" expanded="false" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1821#1822#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2387#2388#0" expanded="true" />
-            <element signature="e#2538#2539#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2931#2932#0" expanded="true" />
-            <element signature="e#2976#2977#0" expanded="true" />
-            <element signature="e#3323#3324#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
+            <element signature="method#select#1;class#BSTImpl#0" expanded="false" />
+            <element signature="method#rank#1;class#BSTImpl#0" expanded="false" />
+            <element signature="method#min#1;class#BSTImpl#0" expanded="false" />
+            <element signature="method#max#1;class#BSTImpl#0" expanded="false" />
+            <element signature="method#floor#1;class#BSTImpl#0" expanded="false" />
+            <element signature="method#ceiling#1;class#BSTImpl#0" expanded="false" />
             <element signature="method#layer#1;class#BSTImpl#0" expanded="false" />
             <element signature="class#PrintNode#0;class#BSTImpl#0" expanded="false" />
             <element signature="method#PrintNode#0;class#PrintNode#0;class#BSTImpl#0" expanded="false" />
-            <element signature="method#printInOrder#1;class#BSTImpl#0" expanded="false" />
+            <element signature="e#4608#4609#0" expanded="true" />
+            <element signature="e#4642#4643#0" expanded="true" />
             <element signature="method#print#0;class#BSTImpl#0" expanded="false" />
-            <element signature="e#5813#5864#0" expanded="false" />
-            <element signature="e#6304#6359#0" expanded="false" />
+            <element signature="e#6093#6144#0" expanded="false" />
+            <element signature="e#6536#6591#0" expanded="false" />
           </folding>
         </state>
       </provider>

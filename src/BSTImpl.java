@@ -52,6 +52,17 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    public void delMin() {
+        root = delMin(root);
+    }
+
+    private Node delMin(Node node) {
+        if (node.left == null) return node.right;
+        node.left = delMin(node.left);
+        node.N = size(node.left) + size(node.right) + 1;
+        return node;
+    }
+
     public Key select(int k) {
         return select(root, k).key;
     }
@@ -69,7 +80,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return rank(root, key);
     }
 
-    private int rank(Node node,Key key) {
+    private int rank(Node node, Key key) {
         if (node == null) return 0;
         int t = key.compareTo(node.key);
         if (t == 0) return size(node.left) + 1;
@@ -161,7 +172,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     private void printInOrder(Node node) {
         if (node == null) return;
         printInOrder(node.left);
-        System.out.println(node.key);
+        System.out.printf(node.key + " ");
         printInOrder(node.right);
     }
 
@@ -196,12 +207,12 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         BSTImpl bst = new BSTImpl();
 //        Scanner scanner = new Scanner(System.in);
 //        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
-        Scanner scanner = new Scanner("Q W E R T Y U I O P L K H G F D S A Z X C V B N M exit");
+        Scanner scanner = new Scanner(System.in);
         int i = 0;
         while (scanner.hasNext()) {
             String token = scanner.next();
             if (token.equals("exit")) {
-                System.out.println("break");
+                System.out.println("exit");
                 break;
             }
             bst.put(token, i++);
@@ -209,15 +220,29 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
 //        System.out.println("layers: " + bst.layer());
 //        bst.print();
         bst.printInOrder();
-        System.out.println("min: " + bst.min());
-        System.out.println("max: " + bst.max());
-        String str;
-        if ((str = (String) bst.floor("J")) != null)
-            System.out.println("floor J: " + str);
-        if ((str = (String) bst.ceiling("J")) != null)
-            System.out.println("ceiling J: " + str);
-        if ((str = (String) bst.select(5)) != null)
-            System.out.println(5 + ": " + str);
-        System.out.println("rank I:" + bst.rank("I"));
+        while (scanner.hasNext()) {
+            String command = scanner.next();
+            if (command.equals("min")) {
+                System.out.println("min: " + bst.min());
+            } else if (command.equals("max")) {
+                System.out.println("max: " + bst.max());
+            } else if (command.equals("print")) {
+                bst.print();
+            } else if (command.equals("printInOrder")) {
+                bst.printInOrder();
+            } else if (command.equals("delMin")) {
+                bst.delMin();
+            }
+        }
+//        System.out.println("min: " + bst.min());
+//        System.out.println("max: " + bst.max());
+//        String str;
+//        if ((str = (String) bst.floor("J")) != null)
+//            System.out.println("floor J: " + str);
+//        if ((str = (String) bst.ceiling("J")) != null)
+//            System.out.println("ceiling J: " + str);
+//        if ((str = (String) bst.select(5)) != null)
+//            System.out.println(5 + ": " + str);
+//        System.out.println("rank I:" + bst.rank("I"));
     }
 }

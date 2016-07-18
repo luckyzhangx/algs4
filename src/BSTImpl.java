@@ -70,7 +70,35 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    public int layer(){
+    public Key floor(Key key) {
+        return floor(root, key).key;
+    }
+
+    private Node floor(Node node, Key key) {
+        if (node == null) return null;
+        int cmp = key.compareTo(node.key);
+        if (cmp == 0) return node;
+        if (cmp < 0) return floor(node.left, key);
+        Node t = floor(node.right, key);
+        if (t != null) return t;
+        return node;
+    }
+
+    public Key ceiling(Key key) {
+        return ceiling(root, key).key;
+    }
+
+    private Node ceiling(Node node, Key key) {
+        if (node == null) return null;
+        int cmp = key.compareTo(node.key);
+        if (cmp == 0) return node;
+        if(cmp > 0) return ceiling(node.right, key);
+        Node t = ceiling(node.left, key);
+        if (t != null) return t;
+        return node;
+    }
+
+    public int layer() {
         return layer(root);
     }
 
@@ -89,15 +117,15 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     *               1 2   4        8
     * */
 
-    private class PrintNode{
+    private class PrintNode {
         Node node;
         int position;
         int gap;
 
-        PrintNode(Node node, int position, int gap){
+        PrintNode(Node node, int position, int gap) {
             this.node = node;
-            this.position=position;
-            this.gap=gap;
+            this.position = position;
+            this.gap = gap;
         }
     }
 
@@ -114,9 +142,9 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
 
     public void print() {
         int n = layer();
-        int position = (int)Math.pow(2, n-1);
+        int position = (int) Math.pow(2, n - 1);
         int offset = 0;
-        int gap = position/2;//gap to next layer.
+        int gap = position / 2;//gap to next layer.
         LinkedListQueueImpl<PrintNode> queue = new LinkedListQueueImpl<>();
         PrintNode printNode = new PrintNode(root, position, gap);
         queue.enqueue(printNode);
@@ -124,18 +152,18 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
             PrintNode p = queue.dequeue();
             boolean isSameLine = (p.gap == gap);
             if (isSameLine) {
-                int space = p.position-offset-1;
-                System.out.printf("%" + (space+1) + "s", p.node.key);
+                int space = p.position - offset - 1;
+                System.out.printf("%" + (space + 1) + "s", p.node.key);
                 offset = p.position;
             } else {
-                gap = gap/2;
+                gap = gap / 2;
                 System.out.printf("\n");
-                int space = p.position-1;
-                System.out.printf("%" + (space+1) + "s", p.node.key);
+                int space = p.position - 1;
+                System.out.printf("%" + (space + 1) + "s", p.node.key);
                 offset = p.position;
             }
-            if (p.node.left !=null ) queue.enqueue(new PrintNode(p.node.left, p.position-p.gap, p.gap/2));
-            if (p.node.right !=null ) queue.enqueue(new PrintNode(p.node.right, p.position+p.gap, p.gap/2));
+            if (p.node.left != null) queue.enqueue(new PrintNode(p.node.left, p.position - p.gap, p.gap / 2));
+            if (p.node.right != null) queue.enqueue(new PrintNode(p.node.right, p.position + p.gap, p.gap / 2));
         }
     }
 
@@ -143,13 +171,14 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         BSTImpl bst = new BSTImpl();
 //        Scanner scanner = new Scanner(System.in);
 //        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
-        Scanner scanner = new Scanner("Q W E R T Y U I O P L K J H G F D S A Z X C V B N M exit");
-        int i=0;
+        Scanner scanner = new Scanner("Q W E R T Y U I O P L K H G F D S A Z X C V B N M exit");
+        int i = 0;
         while (scanner.hasNext()) {
             String token = scanner.next();
-            if (token.equals("exit")){
+            if (token.equals("exit")) {
                 System.out.println("break");
-                break;}
+                break;
+            }
             bst.put(token, i++);
         }
 //        System.out.println("layers: " + bst.layer());
@@ -157,5 +186,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         bst.printInOrder();
         System.out.println("min: " + bst.min());
         System.out.println("max: " + bst.max());
+        String str;
+        if ((str = (String) bst.floor("J")) != null)
+        System.out.println("floor J: " + str);
+        if ((str = (String) bst.ceiling("J")) != null)
+        System.out.println("ceiling J: " + str);
     }
 }

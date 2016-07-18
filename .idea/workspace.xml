@@ -32,8 +32,8 @@
       <file leaf-file-name="BSTImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BSTImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-365">
-              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+            <state relative-caret-position="320">
+              <caret line="192" column="27" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
               <folding>
                 <element signature="docComment;class#BSTImpl#0" expanded="false" />
                 <element signature="class#Node#0;class#BSTImpl#0" expanded="false" />
@@ -45,25 +45,18 @@
                 <element signature="e#1484#1485#0" expanded="true" />
                 <element signature="e#1624#1625#0" expanded="true" />
                 <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1811#1812#0" expanded="true" />
+                <element signature="e#1854#1855#0" expanded="true" />
+                <element signature="e#2204#2205#0" expanded="true" />
+                <element signature="e#2249#2250#0" expanded="true" />
+                <element signature="e#2595#2596#0" expanded="true" />
                 <element signature="method#layer#1;class#BSTImpl#0" expanded="false" />
                 <element signature="class#PrintNode#0;class#BSTImpl#0" expanded="false" />
                 <element signature="method#PrintNode#0;class#PrintNode#0;class#BSTImpl#0" expanded="false" />
                 <element signature="method#printInOrder#1;class#BSTImpl#0" expanded="false" />
                 <element signature="method#print#0;class#BSTImpl#0" expanded="false" />
-                <element signature="e#4262#4313#0" expanded="false" />
-                <element signature="e#4739#4794#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrequencyCounter.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/algs4.jar!/edu/princeton/cs/algs4/FrequencyCounter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-              <folding>
-                <element signature="e#2186#2203#0" expanded="true" />
+                <element signature="e#5085#5136#0" expanded="false" />
+                <element signature="e#5576#5631#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -650,7 +643,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261944" sideWeight="0.4969605" order="6" side_tool="false" content_ui="tabs" />
@@ -658,7 +651,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61120266" sideWeight="0.51215804" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25041187" sideWeight="0.49392098" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25041187" sideWeight="0.49392098" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.4969605" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261944" sideWeight="0.49544072" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -717,7 +710,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="41" />
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -726,20 +719,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/algs4.jar!/edu/princeton/cs/algs4/Huffman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RHuffman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algs4.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1058,7 +1037,7 @@
         <state relative-caret-position="304">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1087,10 +1066,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="878" column="0" selection-start-line="878" selection-start-column="0" selection-end-line="878" selection-end-column="0" />
+          <folding>
+            <element signature="e#35220#35221#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55161">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365">
-          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+        <state relative-caret-position="320">
+          <caret line="192" column="27" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
           <folding>
             <element signature="docComment;class#BSTImpl#0" expanded="false" />
             <element signature="class#Node#0;class#BSTImpl#0" expanded="false" />
@@ -1102,13 +1099,18 @@
             <element signature="e#1484#1485#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
             <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1811#1812#0" expanded="true" />
+            <element signature="e#1854#1855#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2249#2250#0" expanded="true" />
+            <element signature="e#2595#2596#0" expanded="true" />
             <element signature="method#layer#1;class#BSTImpl#0" expanded="false" />
             <element signature="class#PrintNode#0;class#BSTImpl#0" expanded="false" />
             <element signature="method#PrintNode#0;class#PrintNode#0;class#BSTImpl#0" expanded="false" />
             <element signature="method#printInOrder#1;class#BSTImpl#0" expanded="false" />
             <element signature="method#print#0;class#BSTImpl#0" expanded="false" />
-            <element signature="e#4262#4313#0" expanded="false" />
-            <element signature="e#4739#4794#0" expanded="false" />
+            <element signature="e#5085#5136#0" expanded="false" />
+            <element signature="e#5576#5631#0" expanded="false" />
           </folding>
         </state>
       </provider>

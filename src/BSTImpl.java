@@ -248,6 +248,25 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         }
     }
 
+    public Iterable<Key> keys() {
+        return keys(min(), max());
+    }
+
+    public Iterable<Key> keys(Key low, Key high) {
+        LinkedListQueueImpl<Key> queue = new LinkedListQueueImpl<>();
+        keys(root, queue, low, high);
+        return queue;
+    }
+
+    public void keys(Node node, LinkedListQueueImpl queue, Key low, Key high) {
+        if(node == null) return;
+        int cmplow = low.compareTo(node.key);
+        int cmphigh = high.compareTo(node.key);
+        if (cmplow < 0) keys(node.left, queue, low, high);
+        if (cmplow <= 0 && cmphigh >= 0) queue.enqueue(node.key);
+        if (cmphigh > 0) keys(node.right, queue, low, high);
+    }
+
     public Iterable<Key> keys(int low, int high) {
         if (low <= 0 || high > size()) {
             System.out.println("illegal range! check the indices");
@@ -325,6 +344,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
                 }
             }
         }
+        Iterable<String> keys = bst.keys("h", "n");
+        System.out.println("print keys:");
+        for (String string: keys)
+            System.out.printf(string + " ");
 //        System.out.println("min: " + bst.min());
 //        System.out.println("max: " + bst.max());
 //        String str;

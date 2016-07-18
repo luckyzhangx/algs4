@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -247,8 +248,37 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         }
     }
 
+    public Iterable<Key> keys(int low, int high) {
+        if (low <= 0 || high > size()) {
+            System.out.println("illegal range! check the indices");
+            return null;
+        }
+        LinkedListQueueImpl queue = new LinkedListQueueImpl<Key>();
+        keys(root, queue, low, high);
+        return queue;
+    }
+
+    private void keys(Node node, LinkedListQueueImpl queue, int low, int high) {
+        if (node == null) return;
+        int l = size(node.left);
+        int r = size(node.right);
+        if (l >= low) {
+            if (l >= high) {
+                keys(node.left, queue, low, high);
+            } else
+                keys(node.left, queue, low, l);
+        }
+        if (l + 1 >= low && l + 1 <= high) queue.enqueue(node.key);
+        if (l + 1 < high) {
+            if (low <= l + 1)
+                keys(node.right, queue, 1, high - (l + 1));
+            else
+                keys(node.right, queue, low - (l + 1), high - (l + 1));
+        }
+    }
+
     public static void main(String[] args) {
-        BSTImpl bst = new BSTImpl();
+        BSTImpl bst = new BSTImpl<String, Integer>();
 //        Scanner scanner = new Scanner(System.in);
 //        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
         Scanner scanner = new Scanner(System.in);
@@ -281,10 +311,18 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
             } else if (command.equals("del")) {
                 String token = scanner.next();
                 bst.delKey(token);
-            } else if (command.equals("exit")) {
-                break;
+            } else if (command.equals("keys")) {
+                int low = scanner.nextInt();
+                int high = scanner.nextInt();
+                Iterable<String> iterable = bst.keys(low, high);
+                for (String string: iterable)
+                    System.out.println(string);
             } else {
-                System.out.println("no command for this.");
+                if (command.equals("exit")) {
+                    break;
+                } else {
+                    System.out.println("no command for this.");
+                }
             }
         }
 //        System.out.println("min: " + bst.min());

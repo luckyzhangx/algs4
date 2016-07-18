@@ -63,6 +63,17 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    public void delMax() {
+        root = delMax(root);
+    }
+
+    private Node delMax(Node node) {
+        if (node.right == null) return node.left;
+        node.right = delMax(node.right);
+        node.N = size(node.left) + size(node.right) + 1;
+        return node;
+    }
+
     public Key select(int k) {
         return select(root, k).key;
     }
@@ -232,6 +243,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
                 bst.printInOrder();
             } else if (command.equals("delMin")) {
                 bst.delMin();
+            } else if (command.equals("delMax")) {
+                bst.delMax();
+            } else {
+                System.out.println("no command for this.");
             }
         }
 //        System.out.println("min: " + bst.min());

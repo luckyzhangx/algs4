@@ -52,6 +52,19 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node;
     }
 
+    public Key select(int k) {
+        return select(root, k).key;
+    }
+
+    private Node select(Node node, int k) {
+//        position from 1;
+        if (node == null) return null;
+        int t = size(node.left);
+        if (t >= k) return select(node.left, k);
+        else if (t + 1 < k) return select(node.right, k - t - 1);
+        else return node;
+    }
+
     public Key min() {
         return min(root).key;
     }
@@ -92,7 +105,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         if (node == null) return null;
         int cmp = key.compareTo(node.key);
         if (cmp == 0) return node;
-        if(cmp > 0) return ceiling(node.right, key);
+        if (cmp > 0) return ceiling(node.right, key);
         Node t = ceiling(node.left, key);
         if (t != null) return t;
         return node;
@@ -188,8 +201,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         System.out.println("max: " + bst.max());
         String str;
         if ((str = (String) bst.floor("J")) != null)
-        System.out.println("floor J: " + str);
+            System.out.println("floor J: " + str);
         if ((str = (String) bst.ceiling("J")) != null)
-        System.out.println("ceiling J: " + str);
+            System.out.println("ceiling J: " + str);
+        if ((str = (String) bst.select(5)) != null)
+            System.out.println(5 + ": " + str);
     }
 }

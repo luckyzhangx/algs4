@@ -62,6 +62,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     }
 
     private Node delMin(Node node) {
+        if (node == null) return node;
         if (node.left == null) return node.right;
         node.left = delMin(node.left);
         node.N = size(node.left) + size(node.right) + 1;
@@ -110,6 +111,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     }
 
     private Node min(Node node) {
+        if (node == null) return node;
         if (node.left != null) return min(node.left);
         return node;
     }
@@ -148,6 +150,27 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         if (cmp > 0) return ceiling(node.right, key);
         Node t = ceiling(node.left, key);
         if (t != null) return t;
+        return node;
+    }
+
+    public void delKey(Key key) {
+        root = delKey(root, key);
+    }
+
+    private Node delKey(Node node, Key key) {
+        if (node == null) return null;
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) node.left = delKey(node.left, key);
+        if (cmp > 0) node.right = delKey(node.right, key);
+        if (cmp == 0) {
+            Node min = min(node.right);
+            Node t = delMin(node.right);
+            if (min != null) {
+                min.left = node.left;
+                min.right = t;
+            }
+            return min;
+        }
         return node;
     }
 
@@ -255,6 +278,11 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
                 bst.delMin();
             } else if (command.equals("delMax")) {
                 bst.delMax();
+            } else if (command.equals("del")) {
+                String token = scanner.next();
+                bst.delKey(token);
+            } else if (command.equals("exit")) {
+                break;
             } else {
                 System.out.println("no command for this.");
             }

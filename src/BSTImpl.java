@@ -57,6 +57,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     }
 
     public void delMin() {
+        if (isEmpty()) return;
         root = delMin(root);
     }
 
@@ -68,6 +69,7 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     }
 
     public void delMax() {
+        if (isEmpty()) return;
         root = delMax(root);
     }
 
@@ -192,6 +194,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     }
 
     public void print() {
+        if (isEmpty()) {
+            System.out.println("Binary Search Tree is empty");
+            return;
+        }
         int n = layer();
         int position = (int) Math.pow(2, n - 1);
         int offset = 0;

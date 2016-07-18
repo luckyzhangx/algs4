@@ -28,6 +28,10 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
         return node.N;
     }
 
+    public boolean isEmpty() {
+        return size(root) == 0;
+    }
+
     public Value get(Key key) {
         return get(key, root);
     }

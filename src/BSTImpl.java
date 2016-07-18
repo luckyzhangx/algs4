@@ -82,6 +82,18 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
             this.gap=gap;
         }
     }
+
+    public void printInOrder() {
+        printInOrder(root);
+    }
+
+    private void printInOrder(Node node) {
+        if (node == null) return;
+        printInOrder(node.left);
+        System.out.println(node.key);
+        printInOrder(node.right);
+    }
+
     public void print() {
         int n = layer();
         int position = (int)Math.pow(2, n-1);
@@ -112,17 +124,18 @@ public class BSTImpl<Key extends Comparable<Key>, Value> {
     public static void main(String[] args) {
         BSTImpl bst = new BSTImpl();
 //        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
+//        Scanner scanner = new Scanner("H D L B F J N A C E G I K M O exit");
+        Scanner scanner = new Scanner("Q W E R T Y U I O P L K J H G F D S A Z X C V B N M exit");
         int i=0;
         while (scanner.hasNext()) {
             String token = scanner.next();
-            System.out.println(token);
             if (token.equals("exit")){
                 System.out.println("break");
                 break;}
             bst.put(token, i++);
         }
-        System.out.println("layers: " + bst.layer());
-        bst.print();
+//        System.out.println("layers: " + bst.layer());
+//        bst.print();
+        bst.printInOrder();
     }
 }

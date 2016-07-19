@@ -22,9 +22,17 @@ public class RedBlackBSTImpl <Key extends Comparable, Value>{
         }
     }
 
+    public int size() {
+        return size(root);
+    }
+
     private int size(Node node) {
         if (node == null) return 0;
         return node.N;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
     }
 
     private boolean isRed(Node node) {
@@ -75,6 +83,20 @@ public class RedBlackBSTImpl <Key extends Comparable, Value>{
 //        node.left is not possible to be null.
         if (isRed(node.left) && isRed(node.left.left)) node = rotateRight(node);
         if (isRed(node.left) && isRed(node.right)) flipColors(node);
-        return null;
+        node.N = 1 + size(node.left) + size(node.right);
+        return node;
     }
+
+    public Value get(Key key) {
+        return get(key, root);
+    }
+
+    private Value get(Key key ,Node node) {
+        if (node == null) return null;
+        if (node.key.compareTo(key) == 0) return node.value;
+        if (node.key.compareTo(key) < 0) return get(key, node.right);
+        else return get(key, node.left);
+    }
+
+
 }

@@ -54,9 +54,27 @@ public class RedBlackBSTImpl <Key extends Comparable, Value>{
         return h;
     }
 
-    private void flipColors(Node h) {
+    private void flipColors(Node  h) {
         h.color = RED;
         h.left.color = BLACK;
         h.right.color = BLACK;
+    }
+
+    public void put(Key key, Value value) {
+        root = put(root, key, value);
+    }
+
+    private Node put(Node node, Key key, Value value) {
+        if (node == null) return new Node(key, value, 1, RED);
+        int cmp = key.compareTo(node.key);
+        if (cmp > 0) node.right = put(node.right, key, value);
+        else if (cmp < 0) node.left = put(node.left, key, value);
+        else node.value = value;
+
+        if (isRed(node.right) && !isRed(node.right)) node = rotateLeft(node);
+//        node.left is not possible to be null.
+        if (isRed(node.left) && isRed(node.left.left)) node = rotateRight(node);
+        if (isRed(node.left) && isRed(node.right)) flipColors(node);
+        return null;
     }
 }
